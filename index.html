@@ -14,12 +14,13 @@
             /* --steps : 4; */
             --curent-tab : 3;
             --progress-width : 0%;
+            background-color: rgb(241, 241, 241);
         }
     </style>
 </head>
-<body class="h-[100vh] flex items-center justify-center bg-[#C9D9F0]">
+<body class="h-[100vh] flex items-center justify-center">
     <main>
-        <form action="data.php" class="bg-[#e8dcc9] rounded-[8px] p-[20px] w-[80vw] h-[80vh] flex flex-col">
+        <form action="data.php" class="bg-[#e8dcc9] rounded-[8px] p-[20px] w-[80vw] h-[90vh] flex flex-col justify-between">
             <div class="progress-container">
                 <div class="progress">
                     <ol class="progress-list flex z-[2] justify-between [&_li]:bg-[white] [&_li]:p-[0.3rem] [&_li]:rounded-[50%] [&_li]:w-[--style-size] relative">
@@ -54,8 +55,37 @@
 
             </div>
             <div class="forms">
-                <div class="form-containt">
-                    
+                <div class="form-containt mt-[1rem] mb-[1rem]">
+                    <div id="form-containt__profile">
+                        <div class="image flex flex-col w-[10rem] items-center gap-[8px]">
+                            <img id="profileImg" class="bg-[#9ea7a5] w-[7rem] rounded-[12px]" src="./assets/no-image.svg" alt="profile picture" title="profile picture">
+                            <button id="profileBtn" class="bg-[white] p-[0.3rem] rounded-[8px]">Upload Your Image</button>
+                            <input type="file" id="profileInput" class="hidden" accept="image/*">
+                        </div>
+
+                        <div class="infos flex flex-col flex-wrap">
+
+                            <div class="firstname flex flex-col">
+                                <label for="firstname">First Name:</label>
+                                <input type="text" id="firstname" class="bg-[white] rounded-[8px]">
+                            </div>
+
+                            <div class="lastname flex flex-col">
+                                <label for="lastname">Last Name:</label>
+                                <input type="text" id="lastname" class="bg-[white] rounded-[8px]">
+                            </div>
+
+                            <div class="cart flex flex-col">
+                                <label for="cart">Carte Nationale:</label>
+                                <input type="text" id="cart" class="bg-[white] rounded-[8px]">
+                            </div>
+
+                            <div class="Date of birth flex flex-col">
+                                <label for="Date of birth">Date of birth:</label>
+                                <input type="date" id="Date of birth" class="bg-[white] rounded-[8px]">
+                            </div>
+                        </div>
+                    </div> 
                 </div>
                 <div class="form-containt"></div>
                 <div class="form-containt"></div>
