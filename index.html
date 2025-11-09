@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="./app.js" defer></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.snow.css"
+      rel="stylesheet"
+    />
     <title>Document</title>
     <style>
         :root{
@@ -15,6 +19,35 @@
             --curent-tab : 3;
             --progress-width : 0%;
             background-color: rgb(241, 241, 241);
+        }
+        .profile-skill-tag {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: rgb(83, 215, 255);
+            color: white;
+            width: 8rem;
+            height: 3rem;
+            border-radius: 10px;
+            font-weight: 600;
+            overflow: hidden;
+        }
+        .profile-skill-tag span {
+            padding: 8px 12px;
+        }
+
+        .profile-skill-remove {
+            background-color: rgb(255, 65, 61);
+            color: white;
+            padding: 8px 10px;
+            width: 40%;
+            height: 100%;
+            font-size: 1.1rem;
+            font-weight: var(--fw-bold);
+            transition: background-color 0.2s ease;
+        }
+        .profile-skill-remove:hover {
+            background-color: #2C3A3A;
         }
     </style>
 </head>
@@ -87,13 +120,116 @@
                         </div>
                     </div> 
                 </div>
-                <div class="form-containt"></div>
-                <div class="form-containt"></div>
-                <div class="form-containt"></div>
-                <div class="form-containt"></div>
-                <div class="form-containt"></div>
-                <div class="form-containt"></div>
-                <div class="form-containt"></div>
+                <div class="form-containt flex flex-col justify-between h-[300px]">
+                    <div class="Last Job You Had flex flex-col">
+                                <label for="Last Job You Had">Last Job You Had:</label>
+                                <input type="text" id="Last Job You Had" class="bg-[white] rounded-[8px]">
+                            </div>
+
+                    <div class="Last Company flex flex-col">
+                                <label for="Last Company">Last Company:</label>
+                                <input type="text" id="Last Company" class="bg-[white] rounded-[8px]">
+                            </div>
+
+                    <div class="Projects You Made flex flex-col">
+                                <label for="Projects You Made">Projects You Made:</label>
+                                <input type="text" id="Projects You Made" class="bg-[white] rounded-[8px] h-[100px]">
+                        </div>
+                </div>
+
+
+                <div class="form-containt">
+                    <div class="Profissional_Experiences flex flex-col">
+                                <label for="Profissional_Experiences">Profissional Experiences:</label>
+                                <input type="text" id="Profissional_Experiences" class="bg-[white] rounded-[8px]">
+                                <button id="Profissional_Experiences_btn" class="bg-gray-300 rounded-[8px] m-[7px] w-[25%]">Add</button>
+                                <div id="Profissional_Experiences_popup" class="w-[100%] h-[15rem]  flex flex-wrap gap-[10px]">
+
+                                </div>
+                    </div>
+                </div>
+
+
+                <div class="form-containt flex flex-col gap-[1rem]">
+                    <div class="Diploma__Type flex flex-col">
+                                <label for="Diploma_Type">Diploma Type:</label>
+                                <input type="text" id="Diploma_Type" placeholder="Master" class="bg-[white] rounded-[8px]">
+                            </div>
+
+                    <div class="Your_Specification flex flex-col">
+                                <label for="Your_Specification">Your Specification:</label>
+                                <input type="text" id="Your_Specification" placeholder="Web Developement" class="bg-[white] rounded-[8px]">
+                            </div>
+                    <div class="Your_Specification_more_infos_div">
+                        <label for="Your_Specification_more_infos">More Infos About Your Education Career:</label>
+                    <div class="Your_Specification_more_infos flex flex-col bg-[white]">
+                                <div id="editor" class="bg-gray-200">
+                        <script src="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.js"></script>
+                        <script>
+                            const quill = new Quill("#editor", {
+                            theme: "snow",
+                            });
+                        </script>
+                    </div>
+                    </div>
+                            </div>
+                </div>
+
+
+                <div class="form-containt">
+                    <div class="languages">
+                        <div id="languages_containt">
+                            <div class="languages_containt_div">
+                                <div class="languages_containt_one flex flex-col mb-[10px]">
+                                <label for="language_name">Language Name:</label>
+                                <input type="text" placeholder="Frensh" class="language_name bg-[white] rounded-[8px]">
+                                </div>
+
+                                <div class="languages_containt_two flex flex-col mb-[10px]">
+                                <label for="language_level">Your Language Level:</label>
+                                <input type="text" placeholder="B2" class="language_level bg-[white] rounded-[8px]">
+                            </div>
+                            </div>
+                        </div>
+                        <button class="bg-gray-400 p-[7px] rounded-[8px]" id="languages_containt_add_btn">Add Language</button>
+                    </div>
+                </div>
+
+
+                <div class="form-containt">
+                    <div class="hobbies flex flex-col">
+                                <label for="hobbies">Profissional Experiences:</label>
+                                <input type="text" id="hobbies" class="bg-[white] rounded-[8px]">
+                                <button id="hobbies_btn" class="bg-gray-300 rounded-[8px] m-[7px] w-[25%]">Add</button>
+                                <div id="hobbies_popup" class="w-[100%] h-[15rem]  flex flex-wrap gap-[10px]">
+
+                                </div>
+                    </div>
+                </div>
+
+
+                <div class="form-containt">
+                    <div class="skills flex flex-col">
+                                <label for="skills">Your Skills:</label>
+                                <input type="text" id="skills" class="bg-[white] rounded-[8px]">
+                                <button id="skills_btn" class="bg-gray-300 rounded-[8px] m-[7px] w-[25%]">Add</button>
+                                <div id="skills_popup" class="w-[100%] h-[15rem]  flex flex-wrap gap-[10px]">
+
+                                </div>
+                    </div>
+                </div>
+
+
+                <div class="form-containt">
+                    <div class="certificats flex flex-col">
+                                <label for="certificats">Your Certificats:</label>
+                                <input type="text" id="certificats" class="bg-[white] rounded-[8px]">
+                                <button id="certificats_btn" class="bg-gray-300 rounded-[8px] m-[7px] w-[25%]">Add</button>
+                                <div id="certificats_popup" class="w-[100%] h-[15rem]  flex flex-wrap gap-[10px]">
+
+                                </div>
+                    </div>
+                </div>
             </div>
             <div class="btns flex justify-center gap-[10px]">
                 <input type="submit" id="previous" value="Previous" class="bg-[red] w-[49%] rounded-[0.5rem] p-[0.4rem]">
