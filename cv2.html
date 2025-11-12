@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jane Doe - Anti-CV</title>
+    <style>
+        /* Based on the Anti-CV template's fonts (KOMA-Script, Helvetica-like) */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-size: 11pt;
+            line-height: 1.5;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+            color: #333;
+        }
+
+        /* --- Header (mimics \NameEmailPhoneSiteGithub) --- */
+        header {
+            margin-bottom: 1.5em;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 1.5em;
+        }
+
+        .header-main {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+
+        .header-main h1 {
+            font-family: "Georgia", "Times New Roman", serif;
+            font-weight: 700;
+            font-size: 2.5em;
+            margin: 0;
+            color: #000;
+        }
+
+        .contact-info {
+            text-align: right;
+            font-size: 0.9em;
+            line-height: 1.6;
+        }
+
+        .contact-info a {
+            color: #551a8b; /* Mimics purple URL color */
+            text-decoration: none;
+        }
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        .slogan {
+            font-family: "Georgia", "Times New Roman", serif;
+            font-style: italic;
+            font-size: 1.2em;
+            text-align: right;
+            margin-top: -10px;
+            color: #444;
+        }
+
+
+        /* --- Section Styling (mimics \NewPart) --- */
+        section {
+            margin-bottom: 20px;
+        }
+
+        section h2 {
+            font-family: "Helvetica", Arial, sans-serif;
+            font-weight: 700;
+            font-size: 1.4em;
+            text-transform: uppercase;
+            color: #000;
+            border-bottom: 2px solid #333;
+            padding-bottom: 3px;
+            margin-top: 1.5em;
+            margin-bottom: 1em;
+        }
+
+        /* --- List Styling (for Education, Work, etc.) --- */
+        .cv-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .cv-list li {
+            margin-bottom: 1em;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        /* Custom "bullets" */
+        .cv-list .symbol {
+            display: inline-block;
+            font-size: 1.2em;
+            margin-right: 10px;
+            width: 20px; /* Aligns the text */
+            text-align: center;
+        }
+
+        .heartstab {
+            color: red;
+        }
+        
+        .squigarr {
+            color: blue;
+            font-weight: bold;
+        }
+
+        /* --- Skills Section (mimics \SkillsEntry) --- */
+        .skills-list {
+            display: grid;
+            grid-template-columns: 120px 1fr;
+            gap: 12px;
+        }
+
+        .skills-list dt {
+            font-weight: 700;
+            font-style: italic;
+        }
+
+        .skills-list dd {
+            margin-left: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-main">
+            <h1>Jane Doe</h1>
+            <div class="contact-info">
+                +1 (123) 456 7898<br>
+                jane.doe@gmail.com<br>
+                <a href="https://www.youtube.com/watch?v=zL19uMsnpSU">janedoe.xyz (website)</a><br>
+                <a href="https://github.com/dcxSt">github.com/jane (github)</a>
+            </div>
+        </div>
+        <p class="slogan">Anti Curriculum Vitae</p>
+    </header>
+
+    <main>
+
+        <section id="key">
+            <h2>Key</h2>
+            <ul class="cv-list">
+                <li>
+                    <span class="symbol heartstab">💔</span>
+                    Heart-stab. Professional rejections and things I messed up.
+                </li>
+                <li>
+                    <span class="symbol squigarr">↝</span>
+                    Squigly arrow. What did I learn? What were the consequences?
+                </li>
+            </ul>
+        </section>
+
+        <section id="education">
+            <h2>Education</h2>
+            <ul class="cv-list">
+                <li>
+                    <span class="symbol heartstab">💔</span>
+                    <strong>High-school:</strong> Never took German class seriously. To this day I don't speak German.
+                </li>
+                <li>
+                    <span class="symbol squigarr">↝</span>
+                    I think I learned my lesson. I regret not having learned German, I wish I could speak to my German colleagues in their mother tongue now.
+                </li>
+            </ul>
+        </section>
+
+        <section id="work-experience">
+            <h2>Work Experiance</h2>
+            <ul class="cv-list">
+                <li>
+                    <span class="symbol heartstab">💔</span>
+                    Summer 2021 Rejected from XYZ.
+                </li>
+                <li>
+                    <span class="symbol heartstab">💔</span>
+                    Summer 2021, didn't participate in the final round of the Alibaba math competition.
+                </li>
+                <li>
+                    <span class="symbol heartstab">💔</span>
+                    Spring 2021 University research scholarship, my sloppy last minute application was rejected. 
+                    <span class="symbol squigarr">↝</span>
+                    Don't make a last minuet sloppy application. Write multiple drafts days in advance.
+                </li>
+                <li>
+                    <span class="symbol heartstab">💔</span>
+                    DEF, rejected. 
+                    <span class="symbol squigarr">↝</span>
+                    They replied and were cordial, and told me they would get back to me if they needed me in the future.
+                </li>
+                <li>
+                    <span class="symbol heartstab">💔</span>
+                    Lorum Ipsum rejected me. 
+                    <span class="symbol squigarr">↝</span>
+                    Twitter DMs work better than cold emails.
+                </li>
+            </ul>
+        </section>
+
+        <section id="skills">
+            <h2>Skills</h2>
+            <dl class="skills-list">
+                <dt>French</dt>
+                <dd>Never really worked on my written french. My reading speed in French is abysmal.</dd>
+                
+                <dt>German</dt>
+                <dd>Never took German class seriously. My speaking skills are abysmal.</dd>
+                
+                <dt>Software</dt>
+                <dd>I struggle to get the hang of JS for a long time.</dd>
+            </dl>
+        </section>
+
+        <section id="achievements">
+            <h2>Achievements and Interests</h2>
+            <ul class="cv-list">
+                <li>
+                    <span class="symbol heartstab">💔</span>
+                    Dropped out of University Club summer 2021 as the team lead. 
+                    <span class="symbol squigarr">↝</span>
+                    Don't bite off more than you can chew. Don't accept something just because you can.
+                </li>
+                <li>
+                    <span class="symbol heartstab">💔</span>
+                    Didn't complete the 2021 DEFG international math competition final round because of self-esteem issues. 
+                    <span class="symbol squigarr">↝</span>
+                    Don't be scared of losing at stuff. Nothing ever comes out of self pity.
+                </li>
+                <li>
+                    <span class="symbol heartstab">💔</span>
+                    Never applied to University entrance scholarship.
+                    <span class="symbol squigarr">↝</span>
+                    This would have been good to have, as a credential, and for money, even though the fees are not too dear here it's still easy money.
+                </li>
+                <li>
+                    <span class="symbol heartstab">💔</span>
+                    I haven't played any music in years.
+                    <span class="symbol squigarr">↝</span>
+                    Sometimes you need to make sacrifices to get what you want. You can't have everything you want at the same time. Though sad I think it was a good decision.
+Do
+                </li>
+            </ul>
+        </section>
+
+    </main>
+
+</body>
+</html>
