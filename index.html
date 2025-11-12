@@ -5,27 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="./app.js" defer></script>
-    <link
-      href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.snow.css"
-      rel="stylesheet"
-    />
+    <link href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.snow.css" rel="stylesheet" />
     <title>Document</title>
     <style>
         :root{
             --style-size : 4rem;
             --icons-size : 1rem;
-            --icons-color : "balck";
+            --icons-color : black;
             /* --steps : 4; */
             --curent-tab : 3;
             --progress-width : 0%;
-            background-color: rgb(241, 241, 241);
         }
         .profile-skill-tag {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            background-color: rgb(83, 215, 255);
-            color: white;
+            background-color: #E0F2FF;
+            color: #212529;
             width: 8rem;
             height: 3rem;
             border-radius: 10px;
@@ -37,7 +33,7 @@
         }
 
         .profile-skill-remove {
-            background-color: rgb(255, 65, 61);
+            background-color: #DC3545;
             color: white;
             padding: 8px 10px;
             width: 40%;
@@ -51,9 +47,9 @@
         }
     </style>
 </head>
-<body class="h-[100vh] flex items-center justify-center">
+<body class="h-[100vh] flex items-center justify-center bg-[#F8F9FA]">
     <main>
-        <form action="data.php" class="bg-[#e8dcc9] rounded-[8px] p-[20px] w-[80vw] h-[90vh] flex flex-col justify-between">
+        <form action="data.php" class="bg-[white] rounded-[8px] p-[20px] w-[80vw] h-[90vh] flex flex-col justify-between">
             <div class="progress-container">
                 <div class="progress">
                     <ol class="progress-list flex z-[2] justify-between [&_li]:bg-[white] [&_li]:p-[0.3rem] [&_li]:rounded-[50%] [&_li]:w-[--style-size] relative">
@@ -82,7 +78,7 @@
                         </li>
                     </ol>
                     <div class="progress-background w-[100%] h-[10px] bg-[gray] relative top-[-2rem]">
-                    <div class="progress-line w-[var(--progress-width)] bg-[red] h-[10px]"></div>
+                    <div class="progress-line w-[var(--progress-width)] bg-[#007BFF] h-[10px]"></div>
                     </div>
                 </div>
 
@@ -91,58 +87,98 @@
                 <div class="form-containt mt-[1rem] mb-[1rem]">
                     <div id="form-containt__profile">
                         <div class="image flex flex-col w-[10rem] items-center gap-[8px]">
-                            <img id="profileImg" class="bg-[#9ea7a5] w-[7rem] rounded-[12px]" src="./assets/no-image.svg" alt="profile picture" title="profile picture">
-                            <button id="profileBtn" class="bg-[white] p-[0.3rem] rounded-[8px]">Upload Your Image</button>
-                            <input type="file" id="profileInput" class="hidden" accept="image/*">
+                            <img id="profileImg" class="w-[8rem] h-[8rem] rounded-[0.8rem] object-cover bg-gray-500" src="./assets/no-image.svg" alt="profile picture" title="profile picture">
+                            <button id="profileBtn" class="bg-[#007BFF] text-[white] p-[0.3rem] rounded-[8px] ">Upload Your Image</button>
+                            <input type="file" id="profileInput" class="hidden" accept="image/*" value="0">
                         </div>
 
                         <div class="infos flex flex-col flex-wrap">
 
                             <div class="firstname flex flex-col">
-                                <label for="firstname">First Name:</label>
-                                <input type="text" id="firstname" class="bg-[white] rounded-[8px]">
+                                <label for="firstname" class="text-[#212529]">First Name:</label>
+                                <input type="text" id="firstname" tp="1" page="1" class="bg-[white] rounded-[8px] border border-gray-300 focus:outline-none focus:border-blue-500">
+                                <span page="1"></span>
                             </div>
 
                             <div class="lastname flex flex-col">
-                                <label for="lastname">Last Name:</label>
-                                <input type="text" id="lastname" class="bg-[white] rounded-[8px]">
+                                <label for="lastname" class="text-[#212529]">Last Name:</label>
+                                <input type="text" id="lastname" tp="1" page="1" class="bg-[white] rounded-[8px] border border-gray-300 focus:outline-none focus:border-blue-500">
+                                <span page="1"></span>
+                            </div>
+
+                            <div class="gendre flex flex-col">
+                                <label for="gendre" class="text-[#212529]">Gender:</label>
+                                <select id="gendre" class="border border-gray-300 focus:outline-none focus:border-blue-500 rounded-[8px]">
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                </select>
                             </div>
 
                             <div class="cart flex flex-col">
-                                <label for="cart">Carte Nationale:</label>
-                                <input type="text" id="cart" class="bg-[white] rounded-[8px]">
+                                <label for="cart" class="text-[#212529]">Carte Nationale:</label>
+                                <input type="text" id="cart" tp="1" class="bg-[white] rounded-[8px] border border-gray-300 focus:outline-none focus:border-blue-500">
+                                <span page="1"></span>
                             </div>
 
                             <div class="Date of birth flex flex-col">
-                                <label for="Date of birth">Date of birth:</label>
-                                <input type="date" id="Date of birth" class="bg-[white] rounded-[8px]">
+                                <label for="Date of birth"class="text-[#212529]">Date of birth:</label>
+                                <input type="date" id="Date of birth" class="bg-[white] rounded-[8px] border border-gray-300 focus:outline-none focus:border-blue-500">
+                                <span page="1"></span>
                             </div>
                         </div>
                     </div> 
                 </div>
-                <div class="form-containt flex flex-col justify-between h-[300px]">
-                    <div class="Last Job You Had flex flex-col">
-                                <label for="Last Job You Had">Last Job You Had:</label>
-                                <input type="text" id="Last Job You Had" class="bg-[white] rounded-[8px]">
+                <div class="form-containt flex flex-col justify-between h-[25rem]">
+                    <div class="Last_Job_You_Had flex flex-col">
+                                <label for="Last_Job_You_Had" class="text-[#212529]">Last Job You Had:</label>
+                                <input type="text" page="2" tp="1" id="Last_Job_You_Had" class="bg-[white] rounded-[8px] border border-gray-300 focus:outline-none focus:border-blue-500">
+                                <span page="2"></span>
                             </div>
 
-                    <div class="Last Company flex flex-col">
-                                <label for="Last Company">Last Company:</label>
-                                <input type="text" id="Last Company" class="bg-[white] rounded-[8px]">
+                    <div class="Last_Company flex flex-col">
+                                <label for="Last_Company" class="text-[#212529]">Last Company:</label>
+                                <input type="text" page="2" tp="1" id="Last_Company" class="bg-[white] rounded-[8px] border border-gray-300 focus:outline-none focus:border-blue-500">
+                                <span page="2"></span>
                             </div>
 
-                    <div class="Projects You Made flex flex-col">
-                                <label for="Projects You Made">Projects You Made:</label>
-                                <input type="text" id="Projects You Made" class="bg-[white] rounded-[8px] h-[100px]">
+                    <div class="email flex flex-col">
+                                <label for="email" class="text-[#212529]">Your Email:</label>
+                                <input type="text" page="2" id="email" class="bg-[white] rounded-[8px] border border-gray-300 focus:outline-none focus:border-blue-500">
+                                <span page="2"></span>
+                            </div>
+
+                    <div class="linkedin_account flex flex-col">
+                                <label for="linkedin_account" class="text-[#212529]">Your LinkedIn Account:</label>
+                                <input type="text" page="2" id="linkedin_account" class="bg-[white] rounded-[8px] border border-gray-300 focus:outline-none focus:border-blue-500">
+                                <span page="2"></span>
+                            </div>
+
+                    <div class="github_account flex flex-col">
+                                <label for="github_account" class="text-[#212529]">Your Github Account:</label>
+                                <input type="text" page="2" id="github_account" class="bg-[white] rounded-[8px] border border-gray-300 focus:outline-none focus:border-blue-500">
+                                <span page="2"></span>
+                            </div>
+
+                    <div class="Projects_You_Made flex flex-col">
+                                <label for="Projects_You_Made" class="text-[#212529]">Projects You Made:</label>
+                                <div id="editor" class="bg-gray-200">
+                                    <script src="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.js"></script>
+                                    <script>
+                                        const quillOne = new Quill("#editor", {
+                                        theme: "snow",
+                                        });
+                                    </script>
+                                </div>
                         </div>
                 </div>
 
 
                 <div class="form-containt">
                     <div class="Profissional_Experiences flex flex-col">
-                                <label for="Profissional_Experiences">Profissional Experiences:</label>
-                                <input type="text" id="Profissional_Experiences" class="bg-[white] rounded-[8px]">
-                                <button id="Profissional_Experiences_btn" class="bg-gray-300 rounded-[8px] m-[7px] w-[25%]">Add</button>
+                                <label for="Profissional_Experiences" class="text-[#212529]">Profissional Experiences:</label>
+                                <input type="text" page="3" id="Profissional_Experiences" class="bg-[white] rounded-[8px] border border-gray-300 focus:outline-none focus:border-blue-500">
+                                <span page="3"></span>
+                                <button id="Profissional_Experiences_btn" class="bg-[#007BFF] text-[white] rounded-[8px] m-[7px] w-[25%]">Add</button>
                                 <div id="Profissional_Experiences_popup" class="w-[100%] h-[15rem]  flex flex-wrap gap-[10px]">
 
                                 </div>
@@ -152,27 +188,28 @@
 
                 <div class="form-containt flex flex-col gap-[1rem]">
                     <div class="Diploma__Type flex flex-col">
-                                <label for="Diploma_Type">Diploma Type:</label>
-                                <input type="text" id="Diploma_Type" placeholder="Master" class="bg-[white] rounded-[8px]">
+                                <label for="Diploma_Type" class="text-[#212529]">Diploma Type:</label>
+                                <input type="text" page="4" tp="1" id="Diploma_Type" placeholder="Master" class="bg-[white] rounded-[8px] border border-gray-300 focus:outline-none focus:border-blue-500">
+                                <span page="4"></span>
                             </div>
 
                     <div class="Your_Specification flex flex-col">
-                                <label for="Your_Specification">Your Specification:</label>
-                                <input type="text" id="Your_Specification" placeholder="Web Developement" class="bg-[white] rounded-[8px]">
+                                <label for="Your_Specification" class="text-[#212529]">Your Specification:</label>
+                                <input type="text" page="4" tp="1" id="Your_Specification" placeholder="Web Developement" class="bg-[white] rounded-[8px] border border-gray-300 focus:outline-none focus:border-blue-500">
+                                <span page="4"></span>
                             </div>
                     <div class="Your_Specification_more_infos_div">
-                        <label for="Your_Specification_more_infos">More Infos About Your Education Career:</label>
-                    <div class="Your_Specification_more_infos flex flex-col bg-[white]">
-                                <div id="editor" class="bg-gray-200">
-                        <script src="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.js"></script>
-                        <script>
-                            const quill = new Quill("#editor", {
-                            theme: "snow",
-                            });
-                        </script>
-                    </div>
-                    </div>
+                        <label for="Your_Specification_more_infos" class="text-[#212529]">More Infos About Your Education Career:</label>
+                        <div class="Your_Specification_more_infos flex flex-col bg-[white]">
+                            <div id="ed" class="bg-gray-200">
+                                    <script>
+                                        const quill = new Quill('#ed', {
+                                            theme: 'snow'
+                                        });
+                                    </script>
                             </div>
+                        </div>
+                    </div>
                 </div>
 
 
@@ -181,26 +218,30 @@
                         <div id="languages_containt">
                             <div class="languages_containt_div">
                                 <div class="languages_containt_one flex flex-col mb-[10px]">
-                                <label for="language_name">Language Name:</label>
-                                <input type="text" placeholder="Frensh" class="language_name bg-[white] rounded-[8px]">
-                                </div>
+                                <label for="language_name" class="text-[#212529]">Language Name:</label>
+                                <input type="text" page="5" tp="1" placeholder="Frensh" id="language_name" class="bg-[white] rounded-[8px] border border-gray-300 focus:outline-none focus:border-blue-500">
+                                <span page="5"></span>
+                            </div>
 
                                 <div class="languages_containt_two flex flex-col mb-[10px]">
-                                <label for="language_level">Your Language Level:</label>
-                                <input type="text" placeholder="B2" class="language_level bg-[white] rounded-[8px]">
+                                <label for="language_level" class="text-[#212529]">Your Language Level:</label>
+                                <input type="text" page="5" tp="1" placeholder="B2" id="language_level" class="bg-[white] rounded-[8px] border border-gray-300 focus:outline-none focus:border-blue-500">
+                                <span page="5"></span>
                             </div>
                             </div>
                         </div>
-                        <button class="bg-gray-400 p-[7px] rounded-[8px]" id="languages_containt_add_btn">Add Language</button>
+                        <button class="bg-[#007BFF] text-[white] p-[7px] rounded-[8px]" id="languages_containt_add_btn">Add Language</button>
+                        <button class="bg-[#007BFF] text-[white] p-[7px] rounded-[8px]" id="languages_containt_rm_btn">remove</button>
                     </div>
                 </div>
 
 
                 <div class="form-containt">
                     <div class="hobbies flex flex-col">
-                                <label for="hobbies">Profissional Experiences:</label>
-                                <input type="text" id="hobbies" class="bg-[white] rounded-[8px]">
-                                <button id="hobbies_btn" class="bg-gray-300 rounded-[8px] m-[7px] w-[25%]">Add</button>
+                                <label for="hobbies" class="text-[#212529]">Profissional Experiences:</label>
+                                <input type="text" page="6" id="hobbies" class="bg-[white] rounded-[8px] border border-gray-300 focus:outline-none focus:border-blue-500">
+                                <span page="6"></span>
+                                <button id="hobbies_btn" class="bg-[#007BFF] text-[white] rounded-[8px] m-[7px] w-[25%]">Add</button>
                                 <div id="hobbies_popup" class="w-[100%] h-[15rem]  flex flex-wrap gap-[10px]">
 
                                 </div>
@@ -210,9 +251,10 @@
 
                 <div class="form-containt">
                     <div class="skills flex flex-col">
-                                <label for="skills">Your Skills:</label>
-                                <input type="text" id="skills" class="bg-[white] rounded-[8px]">
-                                <button id="skills_btn" class="bg-gray-300 rounded-[8px] m-[7px] w-[25%]">Add</button>
+                                <label for="skills" class="text-[#212529]">Your Skills:</label>
+                                <input type="text" page="7" id="skills" class="bg-[white] rounded-[8px] border border-gray-300 focus:outline-none focus:border-blue-500">
+                                <span page="7"></span>
+                                <button id="skills_btn" class="bg-[#007BFF] text-[white] rounded-[8px] m-[7px] w-[25%]">Add</button>
                                 <div id="skills_popup" class="w-[100%] h-[15rem]  flex flex-wrap gap-[10px]">
 
                                 </div>
@@ -222,9 +264,11 @@
 
                 <div class="form-containt">
                     <div class="certificats flex flex-col">
-                                <label for="certificats">Your Certificats:</label>
-                                <input type="text" id="certificats" class="bg-[white] rounded-[8px]">
-                                <button id="certificats_btn" class="bg-gray-300 rounded-[8px] m-[7px] w-[25%]">Add</button>
+                                <label for="certificats" class="text-[#212529]">Your Certifications:</label>
+                                <input type="text" page="8" id="certificats" class="bg-[white] rounded-[8px] border border-gray-300 focus:outline-none focus:border-blue-500">
+                                <span page="8"></span>
+                                <button id="certificats_btn" class="bg-[#007BFF] text-[white]
+                                 rounded-[8px] m-[7px] w-[25%]">Add</button>
                                 <div id="certificats_popup" class="w-[100%] h-[15rem]  flex flex-wrap gap-[10px]">
 
                                 </div>
@@ -232,8 +276,8 @@
                 </div>
             </div>
             <div class="btns flex justify-center gap-[10px]">
-                <input type="submit" id="previous" value="Previous" class="bg-[red] w-[49%] rounded-[0.5rem] p-[0.4rem]">
-                <input type="submit" id="next" value="Next" class="bg-[red] w-[49%] rounded-[0.5rem] p-[0.4rem]">
+                <input type="submit" id="previous" value="Previous" class="bg-[#007BFF] text-[white] w-[49%] rounded-[0.5rem] p-[0.4rem]">
+                <input type="submit" id="next" value="Next" class="bg-[#007BFF] text-[white] w-[49%] rounded-[0.5rem] p-[0.4rem]">
             </div>
         </form>
     </main>
