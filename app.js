@@ -558,27 +558,29 @@ document.addEventListener("DOMContentLoaded", ()=>{
         let how_much_empty_input = 0;
         let curenTab_index = curenTab - 1;
         let curent_form_inputs = formsContent[curenTab_index].getElementsByTagName("input");
-        for (let i = 0; i < curent_form_inputs.length - 1; i++){
-            if(curenTab == 3){
-                if(curent_form_inputs[i].value.length > 0 && userData[ProfissionalInput.getAttribute("id")].length > 0){
-                    formsSpans.textContent = '';
-                    curenTab++;
-                    reload_progress_bar(curenTab);
-                    checkCurentForm(curenTab);
-                } else if (curent_form_inputs[i].value.length > 0 && userData[ProfissionalInput.getAttribute("id")].length == 0){
-                    formsSpans.textContent = 'Please click tha add button';
-                    curent_form_inputs[i].style.border = "1px solid #DC3545";
-                    formsSpans.style.color = "#DC3545";
-                }
-            } else if (curent_form_inputs[i].value.length == 0 && curent_form_inputs[i].getAttribute("id") != "ed" && curent_form_inputs[i].getAttribute("class") != "hidden"){
-                    how_much_empty_input++;
-                    curent_form_inputs[i].style.border = "1px solid #DC3545";
-                    formsSpans.textContent = "Please give valid data.";
-                    formsSpans.style.color = "#DC3545";
-                } else {
-                    curent_form_inputs[i].style.border = '';
-                }
-        }
+        for (let i = 0; i < curent_form_inputs.length; i++){
+                if (curent_form_inputs[i].value.length == 0 && curent_form_inputs[i].getAttribute("id") != "ed" && curent_form_inputs[i].getAttribute("class") != "hidden"){
+                        how_much_empty_input++;
+                        curent_form_inputs[i].style.border = "1px solid #DC3545";
+                        formsSpans.textContent = "Please give valid data.";
+                        formsSpans.style.color = "#DC3545";
+                    } else {
+                        curent_form_inputs[i].style.border = '';
+                    }
+            }
+        // if(curenTab == 3){
+        //         if(curent_form_inputs[0].value.length > 0 && userData[ProfissionalInput.getAttribute("id")].length > 0){
+        //             formsSpans.textContent = '';
+        //             curenTab++;
+        //             reload_progress_bar(curenTab);
+        //             checkCurentForm(curenTab);
+        //         } else if (curent_form_inputs[i].value.length > 0 && userData[ProfissionalInput.getAttribute("id")].length == 0){
+        //             formsSpans.textContent = 'Please click tha add button';
+        //             curent_form_inputs[i].style.border = "1px solid #DC3545";
+        //             formsSpans.style.color = "#DC3545";
+        //         }
+        //     } else {
+                
         if(curenTab = 8){
             for ([key, value] of Object.entries(userData)){
                 localStorage.setItem(key, value);
@@ -620,6 +622,9 @@ document.addEventListener("DOMContentLoaded", ()=>{
         //     }
         // } 
         if(how_much_empty_input == 0 && curenTab >= 1 && curenTab < 8){
+            for (let i = 0; i < curent_form_inputs.length; i++){
+                userData[curent_form_inputs[i].getAttribute("id")] = curent_form_inputs[i].value;
+            }
             formsSpans.textContent = '';
             curenTab++;
             reload_progress_bar(curenTab);
