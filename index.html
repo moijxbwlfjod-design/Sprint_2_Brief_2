@@ -16,6 +16,26 @@
             --curent-tab : 3;
             --progress-width : 0%;
         }
+        .popup_background{
+            height: 100vh !important;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.2);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 99;
+        }
+        
+        .popup{
+            background-color: white;
+            opacity: 100% !important;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 2rem;
+            border-radius: 20px;
+        }
         .profile-skill-tag {
             display: flex;
             align-items: center;
@@ -47,9 +67,9 @@
         }
     </style>
 </head>
-<body class="h-[100vh] flex items-center justify-center bg-[#F8F9FA]">
-    <main>
-        <form action="data.php" class="bg-[white] rounded-[8px] p-[20px] w-[80vw] h-[90vh] flex flex-col justify-between">
+<body class="h-[100vh] flex items-center justify-center bg-[#F8F9FA] m-[0]">
+    <main id="main">
+        <form action="" class="bg-[white] rounded-[8px] p-[20px] w-[80vw] h-[90vh] flex flex-col justify-between">
             <div class="progress-container">
                 <div class="progress">
                     <ol class="progress-list flex z-[2] justify-between [&_li]:bg-[white] [&_li]:p-[0.3rem] [&_li]:rounded-[50%] [&_li]:w-[--style-size] relative">
@@ -97,13 +117,11 @@
                             <div class="firstname flex flex-col">
                                 <label for="firstname" class="text-[#212529]">First Name:</label>
                                 <input type="text" id="firstname" tp="1" page="1" class="bg-[white] rounded-[8px] border border-gray-300 focus:outline-none focus:border-blue-500">
-                                <span page="1"></span>
                             </div>
 
                             <div class="lastname flex flex-col">
                                 <label for="lastname" class="text-[#212529]">Last Name:</label>
                                 <input type="text" id="lastname" tp="1" page="1" class="bg-[white] rounded-[8px] border border-gray-300 focus:outline-none focus:border-blue-500">
-                                <span page="1"></span>
                             </div>
 
                             <div class="gendre flex flex-col">
@@ -116,47 +134,41 @@
 
                             <div class="cart flex flex-col">
                                 <label for="cart" class="text-[#212529]">Carte Nationale:</label>
-                                <input type="text" id="cart" tp="1" class="bg-[white] rounded-[8px] border border-gray-300 focus:outline-none focus:border-blue-500">
-                                <span page="1"></span>
+                                <input type="text" id="cart" class="bg-[white] rounded-[8px] border border-gray-300 focus:outline-none focus:border-blue-500">
                             </div>
 
                             <div class="Date of birth flex flex-col">
                                 <label for="Date of birth"class="text-[#212529]">Date of birth:</label>
                                 <input type="date" id="Date of birth" class="bg-[white] rounded-[8px] border border-gray-300 focus:outline-none focus:border-blue-500">
-                                <span page="1"></span>
                             </div>
                         </div>
                     </div> 
                 </div>
-                <div class="form-containt flex flex-col justify-between h-[25rem]">
+      
+                <div class="form-containt flex flex-col justify-between h-[25rem] mb-[40px]">
                     <div class="Last_Job_You_Had flex flex-col">
                                 <label for="Last_Job_You_Had" class="text-[#212529]">Last Job You Had:</label>
                                 <input type="text" page="2" tp="1" id="Last_Job_You_Had" class="bg-[white] rounded-[8px] border border-gray-300 focus:outline-none focus:border-blue-500">
-                                <span page="2"></span>
                             </div>
 
                     <div class="Last_Company flex flex-col">
                                 <label for="Last_Company" class="text-[#212529]">Last Company:</label>
                                 <input type="text" page="2" tp="1" id="Last_Company" class="bg-[white] rounded-[8px] border border-gray-300 focus:outline-none focus:border-blue-500">
-                                <span page="2"></span>
                             </div>
 
                     <div class="email flex flex-col">
                                 <label for="email" class="text-[#212529]">Your Email:</label>
                                 <input type="text" page="2" id="email" class="bg-[white] rounded-[8px] border border-gray-300 focus:outline-none focus:border-blue-500">
-                                <span page="2"></span>
                             </div>
 
                     <div class="linkedin_account flex flex-col">
                                 <label for="linkedin_account" class="text-[#212529]">Your LinkedIn Account:</label>
                                 <input type="text" page="2" id="linkedin_account" class="bg-[white] rounded-[8px] border border-gray-300 focus:outline-none focus:border-blue-500">
-                                <span page="2"></span>
                             </div>
 
                     <div class="github_account flex flex-col">
                                 <label for="github_account" class="text-[#212529]">Your Github Account:</label>
                                 <input type="text" page="2" id="github_account" class="bg-[white] rounded-[8px] border border-gray-300 focus:outline-none focus:border-blue-500">
-                                <span page="2"></span>
                             </div>
 
                     <div class="Projects_You_Made flex flex-col">
@@ -170,14 +182,14 @@
                                     </script>
                                 </div>
                         </div>
-                </div>
+
+                    </div>
 
 
                 <div class="form-containt">
                     <div class="Profissional_Experiences flex flex-col">
                                 <label for="Profissional_Experiences" class="text-[#212529]">Profissional Experiences:</label>
                                 <input type="text" page="3" id="Profissional_Experiences" class="bg-[white] rounded-[8px] border border-gray-300 focus:outline-none focus:border-blue-500">
-                                <span page="3"></span>
                                 <button id="Profissional_Experiences_btn" class="bg-[#007BFF] text-[white] rounded-[8px] m-[7px] w-[25%]">Add</button>
                                 <div id="Profissional_Experiences_popup" class="w-[100%] h-[15rem]  flex flex-wrap gap-[10px]">
 
@@ -190,13 +202,11 @@
                     <div class="Diploma__Type flex flex-col">
                                 <label for="Diploma_Type" class="text-[#212529]">Diploma Type:</label>
                                 <input type="text" page="4" tp="1" id="Diploma_Type" placeholder="Master" class="bg-[white] rounded-[8px] border border-gray-300 focus:outline-none focus:border-blue-500">
-                                <span page="4"></span>
                             </div>
 
                     <div class="Your_Specification flex flex-col">
                                 <label for="Your_Specification" class="text-[#212529]">Your Specification:</label>
                                 <input type="text" page="4" tp="1" id="Your_Specification" placeholder="Web Developement" class="bg-[white] rounded-[8px] border border-gray-300 focus:outline-none focus:border-blue-500">
-                                <span page="4"></span>
                             </div>
                     <div class="Your_Specification_more_infos_div">
                         <label for="Your_Specification_more_infos" class="text-[#212529]">More Infos About Your Education Career:</label>
@@ -220,13 +230,11 @@
                                 <div class="languages_containt_one flex flex-col mb-[10px]">
                                 <label for="language_name" class="text-[#212529]">Language Name:</label>
                                 <input type="text" page="5" tp="1" placeholder="Frensh" id="language_name" class="bg-[white] rounded-[8px] border border-gray-300 focus:outline-none focus:border-blue-500">
-                                <span page="5"></span>
                             </div>
 
                                 <div class="languages_containt_two flex flex-col mb-[10px]">
                                 <label for="language_level" class="text-[#212529]">Your Language Level:</label>
                                 <input type="text" page="5" tp="1" placeholder="B2" id="language_level" class="bg-[white] rounded-[8px] border border-gray-300 focus:outline-none focus:border-blue-500">
-                                <span page="5"></span>
                             </div>
                             </div>
                         </div>
@@ -238,9 +246,8 @@
 
                 <div class="form-containt">
                     <div class="hobbies flex flex-col">
-                                <label for="hobbies" class="text-[#212529]">Profissional Experiences:</label>
-                                <input type="text" page="6" id="hobbies" class="bg-[white] rounded-[8px] border border-gray-300 focus:outline-none focus:border-blue-500">
-                                <span page="6"></span>
+                                <label for="hobbies" class="text-[#212529]">Hobbies:</label>
+                                <input type="text" page="6" id="hobbies" placeholder="This is optional" class="bg-[white] rounded-[8px] border border-gray-300 focus:outline-none focus:border-blue-500">
                                 <button id="hobbies_btn" class="bg-[#007BFF] text-[white] rounded-[8px] m-[7px] w-[25%]">Add</button>
                                 <div id="hobbies_popup" class="w-[100%] h-[15rem]  flex flex-wrap gap-[10px]">
 
@@ -253,7 +260,6 @@
                     <div class="skills flex flex-col">
                                 <label for="skills" class="text-[#212529]">Your Skills:</label>
                                 <input type="text" page="7" id="skills" class="bg-[white] rounded-[8px] border border-gray-300 focus:outline-none focus:border-blue-500">
-                                <span page="7"></span>
                                 <button id="skills_btn" class="bg-[#007BFF] text-[white] rounded-[8px] m-[7px] w-[25%]">Add</button>
                                 <div id="skills_popup" class="w-[100%] h-[15rem]  flex flex-wrap gap-[10px]">
 
@@ -266,7 +272,6 @@
                     <div class="certificats flex flex-col">
                                 <label for="certificats" class="text-[#212529]">Your Certifications:</label>
                                 <input type="text" page="8" id="certificats" class="bg-[white] rounded-[8px] border border-gray-300 focus:outline-none focus:border-blue-500">
-                                <span page="8"></span>
                                 <button id="certificats_btn" class="bg-[#007BFF] text-[white]
                                  rounded-[8px] m-[7px] w-[25%]">Add</button>
                                 <div id="certificats_popup" class="w-[100%] h-[15rem]  flex flex-wrap gap-[10px]">
@@ -275,6 +280,7 @@
                     </div>
                 </div>
             </div>
+            <span id="error_span"></span>
             <div class="btns flex justify-center gap-[10px]">
                 <input type="submit" id="previous" value="Previous" class="bg-[#007BFF] text-[white] w-[49%] rounded-[0.5rem] p-[0.4rem]">
                 <input type="submit" id="next" value="Next" class="bg-[#007BFF] text-[white] w-[49%] rounded-[0.5rem] p-[0.4rem]">
